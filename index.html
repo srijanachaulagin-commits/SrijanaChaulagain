@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Srijana Chaulagain | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f5f5f5;
+      color:#333;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      position:relative;
+      padding:20px;
+    }
+
+    nav{
+      position:absolute;
+      top:20px;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 60px;
+    }
+
+    nav h2{
+      color:white;
+      font-size:24px;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      color:white;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#ff4b5c;
+    }
+
+    .profile-img{
+      width:170px;
+      height:170px;
+      border-radius:50%;
+      object-fit:cover;
+      border:6px solid white;
+      margin-bottom:25px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.5);
+    }
+
+    .hero-content h1{
+      font-size:60px;
+      margin-bottom:10px;
+    }
+
+    .hero-content p{
+      font-size:20px;
+      color:#ddd;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 28px;
+      margin:10px;
+      background:#ff4b5c;
+      color:white;
+      border-radius:30px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#e63b4d;
+      transform:translateY(-3px);
+    }
+
+    /* SECTION */
+
+    section{
+      padding:80px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:38px;
+      position:relative;
+      display:inline-block;
+      padding-bottom:10px;
+    }
+
+    .section-title h2::after{
+      content:'';
+      position:absolute;
+      width:60%;
+      height:4px;
+      background:#ff4b5c;
+      bottom:0;
+      left:20%;
+      border-radius:10px;
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .about-box{
+      background:white;
+      padding:35px;
+      border-radius:12px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .about-box h3{
+      margin-bottom:20px;
+      color:#111;
+    }
+
+    .about-box p{
+      margin-bottom:15px;
+      color:#555;
+      line-height:1.7;
+    }
+
+    /* SKILLS */
+
+    .skills{
+      background:#111827;
+      color:white;
+    }
+
+    .skills .section-title h2{
+      color:white;
+    }
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .skill-card{
+      background:#1f2937;
+      padding:30px;
+      border-radius:12px;
+      text-align:center;
+      transition:0.3s;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .skill-card h3{
+      color:#ff4b5c;
+      margin-bottom:10px;
+    }
+
+    /* EDUCATION */
+
+    .edu-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .edu-card{
+      background:white;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .edu-card h3{
+      margin-bottom:10px;
+      color:#111;
+    }
+
+    .edu-card span{
+      color:#ff4b5c;
+      font-weight:600;
+    }
+
+    /* EXPERIENCE */
+
+    .experience{
+      background:#f9fafb;
+    }
+
+    .exp-card{
+      background:white;
+      padding:40px;
+      border-radius:12px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .exp-card h3{
+      margin-bottom:10px;
+    }
+
+    .exp-card h4{
+      color:#ff4b5c;
+      margin-bottom:20px;
+    }
+
+    .exp-card ul{
+      padding-left:20px;
+      line-height:2;
+    }
+
+    /* RESUME */
+
+    .resume-container{
+      background:white;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    iframe{
+      border:none;
+      border-radius:10px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      background:#111827;
+      color:white;
+      text-align:center;
+    }
+
+    .contact p{
+      margin-bottom:12px;
+      font-size:18px;
+    }
+
+    footer{
+      background:#0f172a;
+      color:#bbb;
+      text-align:center;
+      padding:20px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .about{
+        grid-template-columns:1fr;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      .hero-content h1{
+        font-size:42px;
+      }
+
+      nav ul{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <header class="hero" id="home">
+
+    <nav>
+
+      <h2>My CV</h2>
+
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </nav>
+
+    <div class="hero-content">
+
+      <img src="profile.jpg" alt="Profile" class="profile-img">
+
+      <h1>Srijana Chaulagain</h1>
+
+      <p>Surveyor | Geomatics Engineering Student</p>
+
+      <a href="#resume" class="btn">View Resume</a>
+
+      <a href="#contact" class="btn">Contact Me</a>
+
+    </div>
+
+  </header>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="section-title">
+      <h2>About Me</h2>
+    </div>
+
+    <div class="about">
+
+      <div class="about-box">
+
+        <h3>Profile</h3>
+
+        <p>
+          Government Surveyor since 2018 with experience in land surveying,
+          GIS mapping, and field operations.
+        </p>
+
+        <p>
+          Currently pursuing Bachelor in Geomatics Engineering at
+          Kathmandu University.
+        </p>
+
+      </div>
+
+      <div class="about-box">
+
+        <h3>Personal Info</h3>
+
+        <p><strong>Name:</strong> Srijana Chaulagain</p>
+
+        <p><strong>Location:</strong> Kalikot-3, Nepal</p>
+
+        <p><strong>Phone:</strong> 9864343100</p>
+
+        <p><strong>Email:</strong> srijanachaulagin@gmail.com</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section class="skills" id="skills">
+
+    <div class="section-title">
+      <h2>Skills</h2>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <h3>ArcGIS</h3>
+        <p>GIS Mapping & Spatial Analysis</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>AutoCAD</h3>
+        <p>Technical Drawing & Design</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Google Earth Engine</h3>
+        <p>Remote Sensing Analysis</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>NeLIS</h3>
+        <p>Land Information System</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EDUCATION -->
+
+  <section id="education">
+
+    <div class="section-title">
+      <h2>Education</h2>
+    </div>
+
+    <div class="edu-grid">
+
+      <div class="edu-card">
+        <span>Running</span>
+        <h3>Bachelor in Geomatics Engineering</h3>
+        <p>Kathmandu University</p>
+      </div>
+
+      <div class="edu-card">
+        <span>Completed</span>
+        <h3>Diploma in Geomatics Engineering</h3>
+      </div>
+
+      <div class="edu-card">
+        <span>SLC</span>
+        <h3>Trilok Children Academy</h3>
+        <p>Balaju, Kathmandu</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EXPERIENCE -->
+
+  <section class="experience" id="experience">
+
+    <div class="section-title">
+      <h2>Experience</h2>
+    </div>
+
+    <div class="exp-card">
+
+      <h3>Government Surveyor</h3>
+
+      <h4>2018 - Present</h4>
+
+      <ul>
+        <li>Land Surveying</li>
+        <li>GIS Mapping</li>
+        <li>Cadastral Survey</li>
+        <li>Field Operations</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- RESUME -->
+
+  <section id="resume">
+
+    <div class="section-title">
+      <h2>My Resume</h2>
+    </div>
+
+    <div class="resume-container">
+
+      <!-- Put your resume.pdf file in same folder -->
+
+      <iframe src="resume.pdf" width="100%" height="700px"></iframe>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+      <h2>Contact</h2>
+    </div>
+
+    <p>📍 Kalikot-3, Nepal</p>
+
+    <p>📞 9864343100</p>
+
+    <p>✉️ srijanachaulagin@gmail.com</p>
+
+  </section>
+
+  <footer>
+    <p>© 2026 Srijana Chaulagain | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
